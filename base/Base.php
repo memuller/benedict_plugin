@@ -4,7 +4,7 @@
 
 	class Plugin extends BasePlugin {
 
-		static $db_version = 0.1 ;
+		static $db_version = 0.2 ;
 		static $custom_posts = array('Pedia');
 		static $custom_users = array();
 		static $custom_classes = array();
