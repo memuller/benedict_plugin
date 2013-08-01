@@ -1,3 +1,12 @@
+<?php  
+	foreach ($fields as $field => $options) {
+		if($options['type'] == 'hidden'){
+			require 'partials/field_handler.php' ;
+			require 'fields/hidden.php' ;
+			unset($fields[$field]) ;
+		}
+	}
+?>
 <table class='form-table'>
 	<tbody>
 		<?php foreach ($fields as $field => $options) { 

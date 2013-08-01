@@ -6,10 +6,11 @@
 
 		static $db_version = 0.2 ;
 		static $custom_posts = array('Pedia');
+		static $custom_post_formats = array('Person', 'Project', 'Reference', 'Module', 'Tool', 'Term');
 		static $custom_users = array();
 		static $custom_classes = array();
 		static $custom_singles = array();
-		static $custom_taxonomies = array('Compendia');
+		static $custom_taxonomies = array('Folio');
 		static $restricted_menus = array();
 
 		static $roles = array(

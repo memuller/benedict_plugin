@@ -36,6 +36,7 @@
 	if(!class_exists('BasePost')) require_once 'lib/BasePost.php' ;
 	if(!class_exists('DB_Object')) require_once 'lib/DB_Object.php' ;
 	if(!class_exists('CustomPost')) require_once 'lib/CustomPost.php' ;
+	if(!class_exists('CustomPostFormat')) require_once 'lib/CustomPostFormat.php' ;
 	if(!class_exists('CustomTaxonomy')) require_once 'lib/CustomTaxonomy.php' ;
 	if(!class_exists('CustomUser')) require_once 'lib/CustomUser.php' ;
 	# Requires WP table/list framework.
