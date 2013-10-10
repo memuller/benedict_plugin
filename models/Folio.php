@@ -10,7 +10,7 @@
 			'hierarchical' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array('slug' => 'compendium'),
+			'rewrite' => array('slug' => 'folio'),
 			'show_admin_column' => true,
 			'update_count_callback' => '_update_post_term_count'
 		);
