@@ -20,6 +20,14 @@
 
 		static $absent_actions = array('quick-edit');
 
+		static $collumns = array(
+			'featured' => 'Destaque?'
+		);
+
+		public function featured(){
+			return $this->featured ? 'Sim' : 'Não' ;
+		}
+
 		static function build(){
 			$class = get_called_class();
 			parent::build();
