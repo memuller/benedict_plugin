@@ -9,7 +9,8 @@
 			'public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post', 'map_meta_cap' => true, 
 			'hierarchical' => false,'rewrite' => array('slug' => 'pedia'),'query_var' => true,
 			'supports' => array('custom-fields', 'title', 'thumbnail', 'editor'), 
-			'has_archive' => true, 'taxonomies' => array('post_tag')
+			'has_archive' => true, 'taxonomies' => array('post_tag'),
+			'menu_position' => 6
 		) ;
 		static $labels = array (
 			'name' => 'Pedia',
