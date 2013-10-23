@@ -28,10 +28,10 @@
 		static $icon = '\f322' ;
 
 		static $fields = array( 
-			
 		) ;
 
-		static $absent_actions = array('quick-edit');
+		static $editable_by = array(
+		);
 
 		static function build(){
 			$class = get_called_class();
@@ -70,6 +70,21 @@
 			)); 
 			if(empty($folios)) return false ; 
 			return array_map(function($folio){ return new \Benedict\Folio($folio); }, $folios);
+		}
+
+		public function items(){
+			$posts = get_posts(array(
+				'connected_type' => 'items_to_folio',
+				'connected_items' => $this->base,
+				'nopaging' => true, 'suppress_filters' => false,
+				'post_type' => 'any'
+			));
+			$posts =  array_map(function($post){
+				$class = '\Benedict\\'. ucfirst($post->post_type) ;
+				return new $class($post) ;
+			}, $posts);
+
+			return $posts ;
 		}
 	}
 
