@@ -60,6 +60,17 @@
 				));
 			});
 		}
+
+		static function belongs_to($post = null){
+			if(!$post){ global $post ; }
+			$folios = get_posts(array(
+				'connected_type' => 'items_to_folio',
+				'connected_items' => $post,
+				'nopaging' => true, 'suppress_filters' => false 
+			)); 
+			if(empty($folios)) return false ; 
+			return array_map(function($folio){ return new \Benedict\Folio($folio); }, $folios);
+		}
 	}
 
  ?>
