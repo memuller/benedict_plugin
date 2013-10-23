@@ -61,7 +61,7 @@
 			});
 		}
 
-		static function belongs_to($post = null){
+		static function current($post = null){
 			if(!$post){ global $post ; }
 			$folios = get_posts(array(
 				'connected_type' => 'items_to_folio',
