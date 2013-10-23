@@ -61,8 +61,11 @@
 			});
 		}
 
-		static function current($post = null){
-			if(!$post){ global $post ; }
+		static function current(){
+			return static::that_includes($GLOBALS['post']);
+		}
+
+		static function that_includes($post){
 			$folios = get_posts(array(
 				'connected_type' => 'items_to_folio',
 				'connected_items' => $post,
