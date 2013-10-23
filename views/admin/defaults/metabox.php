@@ -6,15 +6,18 @@
 			unset($fields[$field]) ;
 		}
 	}
+	if(!isset($description_colspan)) $description_colspan = true ;
 ?>
 <table class='form-table'>
 	<tbody>
 		<?php $i = 0; foreach ($fields as $field => $options) { 
 			require 'partials/field_handler.php'; 
 			$description_placing = ($options['type'] == 'text_area' || $options['type'] == 'geo') ? 'top' : 'bottom' ; ?>
-			<?php  
-				$header_style = $i == 0 ? 'padding-top: 5px; ' : '';
-				$header_style .= $description_placing != 'top' ? 'border-bottom: 0px; padding-bottom: 5px;' : '' ;
+			<?php
+				if($description_colspan){  
+					$header_style = $i == 0 ? 'padding-top: 5px; ' : '';
+					$header_style .= $description_placing != 'top' ? 'border-bottom: 0px; padding-bottom: 5px;' : '' ;
+				}
 			?>
 			<tr>
 				<th <?php echo "style='$header_style'" ?>>
@@ -53,8 +56,9 @@
 						break;
 
 					} ?>
+					<?php if(!$description_colspan) description($options['description']) ; ?>
 				</td>
-				<?php if ($description_placing != 'top'): ?>
+				<?php if ($description_colspan && $description_placing != 'top'): ?>
 					</tr>
 					<tr class="compact"><td colspan='2' style="padding: 2px 5px 8px 5px ;">
 						<?php description($options['description']) ?>
