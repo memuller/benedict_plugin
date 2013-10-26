@@ -26,7 +26,9 @@
 		);
 		static $icon = '\f118' ;
 		static $tabs ; 
-		static $fields = array() ;
+		static $fields = array(
+			'placeholder' => array()
+		) ;
 
 		static $formats = array('term', 'tool', 'module', 'project', 'reference', 'person');
 

@@ -12,7 +12,9 @@
 		);
 
 		static $fields = array(
-
+			'type' => array('label' => 'Tipo', 'type' => 'array', 'values' => array('Impresso', 'Site', 'Vídeo', 'Filme')),
+			'url' => array('label' => 'URL'),
+			'citation_block' => array('label' => 'Citação', 'type' => 'text_area')
 		) ;
 
 	}

@@ -12,7 +12,9 @@
 		);
 
 		static $fields = array(
-			'full_name' => array('type' => 'string', 'label' => "Full name", 'description' => "Person's full name")
+			'full_name' => array('label' => "Nome completo"),
+			'place' => array('label' => 'Local de atuação'),
+			'facebook' => array('label' => 'Perfil no Facebook')
 		) ;
 
 	}
