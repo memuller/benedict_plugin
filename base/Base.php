@@ -12,6 +12,7 @@
 		static $custom_singles = array();
 		static $custom_taxonomies = array();
 		static $restricted_menus = array();
+		static $presenters = array('Pedia');
 
 		static $roles = array(
 		);
