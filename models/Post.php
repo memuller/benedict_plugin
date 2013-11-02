@@ -11,11 +11,13 @@
 			'featured' => array('label' => 'Destaque?', 'type' => 'boolean', 'default' => false,
 				'description' => 'no slider da página inicial.'),
 			'image_header' => array('label' => 'Usa imagem no cabeçalho?', 'type' => 'boolean', 'default' => false,
-				'description' => 'a mesma utilizada como thumbnail.')
+				'description' => 'a mesma utilizada como thumbnail.'),
+			'claim' => array('label' => 'Chamada', 'type' => 'text', 'description' => 'usada no cabeçalho e slider de destaques.')
 		) ;
 
 		static $editable_by = array(
-			'Apresentação' => array('fields' => array('featured', 'image_header'))
+			'Apresentação' => array('fields' => array('featured', 'image_header'), 'placing' => 'side'),
+			'Chamada' => array('fields' => array('claim'), 'placing' => 'normal')
 		);
 
 		static $absent_actions = array('quick-edit');
