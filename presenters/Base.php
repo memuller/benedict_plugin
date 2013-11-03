@@ -24,6 +24,15 @@
 					return $actions ;
 				});
 			});
+
+			add_action('template_redirect', function(){
+				global $current_section, $post_type ;
+				$current_section = 'board' ;
+				if(isset($post_type)){
+					if('pedia' == $post_type) $current_section = 'pedia' ;
+					if('folio' == $post_type) $current_section = 'folio' ;
+				}
+			});
 		}
 	}
 ?>
