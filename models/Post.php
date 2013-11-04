@@ -20,8 +20,6 @@
 			'Chamada' => array('fields' => array('claim'), 'placing' => 'normal')
 		);
 
-		static $absent_actions = array('quick-edit');
-
 		static $collumns = array(
 			'featured' => 'Destaque?'
 		);
