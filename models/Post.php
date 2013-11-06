@@ -17,7 +17,7 @@
 
 		static $editable_by = array(
 			'Apresentação' => array('fields' => array('featured', 'image_header'), 'placing' => 'side'),
-			'Chamada' => array('fields' => array('claim'), 'placing' => 'normal')
+			'Visualização' => array('fields' => array('claim'), 'placing' => 'normal')
 		);
 
 		static $collumns = array(
