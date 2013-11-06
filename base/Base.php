@@ -47,6 +47,11 @@
 			add_action('init', function(){
 				register_taxonomy('category', array());
 			});
+
+			add_filter('upload_mimes', function ( $existing_mimes=array() ) { 
+				$existing_mimes['svg'] = 'mime/type'; 
+				return $existing_mimes; 
+			});
 		}
 	}
 
