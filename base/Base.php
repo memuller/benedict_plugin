@@ -52,6 +52,13 @@
 				$existing_mimes['svg'] = 'mime/type'; 
 				return $existing_mimes; 
 			});
+			
+			add_action('init', function(){
+				if(function_exists('sharing_display')){
+					remove_filter('the_content', 'sharing_display', 19);
+				}
+			}, 11);
+
 		}
 	}
 
