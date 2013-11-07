@@ -12,12 +12,14 @@
 				'description' => 'no slider da página inicial.'),
 			'image_header' => array('label' => 'Usa imagem no cabeçalho?', 'type' => 'boolean', 'default' => false,
 				'description' => 'a mesma utilizada como thumbnail.'),
-			'claim' => array('label' => 'Chamada', 'type' => 'text', 'description' => 'usada no cabeçalho e slider de destaques.')
+			'claim' => array('label' => 'Chamada', 'type' => 'text', 'description' => 'usada no cabeçalho e slider de destaques.'),
+			'show_image' => array('label' => 'Exibir imagem?', 'type' => 'boolean', 'default' => true, 
+				'description' => 'exibe imagem destacada (se houver) em listagens de posts.')
 		) ;
 
 		static $editable_by = array(
 			'Apresentação' => array('fields' => array('featured', 'image_header'), 'placing' => 'side'),
-			'Visualização' => array('fields' => array('claim'), 'placing' => 'normal')
+			'Visualização' => array('fields' => array('claim', 'show_image'), 'placing' => 'normal')
 		);
 
 		static $collumns = array(
