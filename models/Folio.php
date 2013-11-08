@@ -9,7 +9,7 @@
 			'label' => 'folio','description' => 'A folio of items.',
 			'public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post', 'map_meta_cap' => true, 
 			'hierarchical' => false,'rewrite' => array('slug' => 'folio'),'query_var' => true,
-			'supports' => array('custom-fields', 'title', 'thumbnail', 'editor'), 
+			'supports' => array('custom-fields', 'title', 'thumbnail'), 
 			'has_archive' => true, 'taxonomies' => array(), 'menu_position' => 7
 		) ;
 		static $labels = array (
