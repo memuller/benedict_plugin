@@ -12,8 +12,9 @@
 		);
 
 		static $fields = array(
-			'full_name' => array('label' => "Nome completo"),
+			'position' => array('label' => "Título"),
 			'place' => array('label' => 'Local de atuação'),
+			'works_at' => array('label' => 'Trabalha em'),
 			'facebook' => array('label' => 'Perfil no Facebook')
 		) ;
 

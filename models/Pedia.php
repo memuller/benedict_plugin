@@ -43,11 +43,16 @@
 		static $absent_actions = array('quick-edit');
 
 		static $collumns = array(
+			'type' => 'Tipo',
 			'featured' => 'Destaque?'
 		);
 
 		public function featured(){
 			return $this->featured ? 'Sim' : 'Não' ;
+		}
+
+		public function type(){
+			_e("pedia-$this->post_format");
 		}
 
 		static $formats = array('term', 'tool', 'module', 'project', 'reference', 'person');

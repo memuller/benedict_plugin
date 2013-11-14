@@ -39,6 +39,7 @@
 	if(!class_exists('CustomPostFormat')) require_once 'lib/CustomPostFormat.php' ;
 	if(!class_exists('CustomTaxonomy')) require_once 'lib/CustomTaxonomy.php' ;
 	if(!class_exists('CustomUser')) require_once 'lib/CustomUser.php' ;
+	if(!class_exists('Translation')) require_once 'lib/Translation.php' ;
 	# Requires WP table/list framework.
 	if(!class_exists('WP_List_Table')) require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 	

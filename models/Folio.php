@@ -83,18 +83,19 @@
 			return array_map(function($folio){ return new \Benedict\Folio($folio); }, $folios);
 		}
 
-		public function items(){
+		public function items($object = true){
 			$posts = get_posts(array(
 				'connected_type' => 'items_to_folio',
 				'connected_items' => $this->base,
 				'nopaging' => true, 'suppress_filters' => false,
 				'post_type' => 'any'
 			));
-			$posts =  array_map(function($post){
-				$class = '\Benedict\\'. ucfirst($post->post_type) ;
-				return new $class($post) ;
-			}, $posts);
-
+			if($object == true){
+				$posts =  array_map(function($post){
+					$class = '\Benedict\\'. ucfirst($post->post_type) ;
+					return new $class($post) ;
+				}, $posts);
+			}
 			return $posts ;
 		}
 	}

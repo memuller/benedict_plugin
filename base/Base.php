@@ -4,23 +4,24 @@
 
 	class Plugin extends BasePlugin {
 
-		static $db_version = 0.6 ;
+		static $db_version = '0.6a' ;
 		static $custom_posts = array('Post','Pedia', 'Folio');
 		static $custom_post_formats = array('Person', 'Project', 'Reference', 'Module', 'Tool', 'Term');
 		static $custom_users = array('Crafter');
-		static $custom_classes = array();
-		static $custom_singles = array();
-		static $custom_taxonomies = array();
-		static $restricted_menus = array();
 		static $presenters = array('Pedia');
-
-		static $roles = array(
-		);
+		static $has_translations = true ;
 
 		static $absent_roles = array();
 
 		static $migrations = array(
 			'0.1' => 'sharedaddy_options'
+		);
+
+		static $query_vars = array(
+			'filter' => '(term|tool|module|project|reference|person)'
+		);
+		static $rewrite_rules = array(
+			'pedia/%filter%' => 'post_type=pedia'
 		);
 
 		static function migrate_sharedaddy_options(){
