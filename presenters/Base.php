@@ -23,6 +23,10 @@
 					if(isset($actions['pgcache_purge'])) unset($actions['pgcache_purge']) ;
 					return $actions ;
 				});
+				add_filter('mce_css', function($css){
+					$css .= ",http://fonts.googleapis.com/css?family=Overlock+SC|Bitter:400%2C400italic%2C700";
+					return $css ;
+				});			
 			});
 
 			add_action('template_redirect', function(){
