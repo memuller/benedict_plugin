@@ -7,8 +7,8 @@
 		static $for = 'pedia' ;
 
 		static $labels = array (
-			'name' => 'Projetos',
-			'singular_name' => 'Projeto',
+			'name' => 'Projects',
+			'singular_name' => 'Project',
 		);
 
 		static $fields = array(
