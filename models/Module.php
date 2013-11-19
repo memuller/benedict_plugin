@@ -12,7 +12,8 @@
 		);
 
 		static $fields = array(
-
+			'phase' => array('label' => 'Fase', 'type' => 'array', 'values' => array('Coletar', 'Moldar', 'Evidenciar')),
+			'cost' => array('label' => 'Custo',  'type' => 'integer')
 		) ;
 
 	}

@@ -57,7 +57,43 @@
 
 		static $formats = array('term', 'tool', 'module', 'project', 'reference', 'person');
 
+		static function build(){
+			parent::build();
+			add_action('p2p_init', function(){
+				p2p_register_connection_type(array(
+					'name' => 'pedia_to_pedia',
+					'from' => 'pedia',
+					'to' => 'pedia',
+					'sortable' => 'any',
+					'title' => array(
+						'to' => 'Involved modules'
+					),
+					'admin_box' => array(
+						'show' => 'to',
+						'context' => 'side'
+					),
+					'from_labels' => array(
+						'singular_name' => 'Módulo',
+						'search_items' => 'Buscar Módulo',
+						'not_found' => 'Nada encontrado',
+						'create' => 'Incluir Módulo'
+					)
+				));
+			});
 
+			add_filter('p2p_connectable_args', function($args, $ctype, $post){
+
+				if('pedia_to_pedia' == $ctype->name){
+					$format = get_post_meta( $post->ID, '_revision_post_format', true );
+					debug($args);
+					debug($format);
+					if('project' == $format){
+
+					}
+				}
+				return $args; 
+			}, 10,3);
+		}
 	}
 
  ?>
