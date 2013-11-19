@@ -12,7 +12,7 @@
 		);
 
 		static $fields = array(
-			
+			'motivator' => array('label' => 'Tipo', 'type' => 'list', 'values' => array('Comercial', 'Acadêmico', 'Experimental')),
 		) ;
 
 	}

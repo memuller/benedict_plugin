@@ -57,6 +57,25 @@
 
 		static $formats = array('term', 'tool', 'module', 'project', 'reference', 'person');
 
+		public function connected($object = true){
+			$posts = get_posts(array(
+				'connected_type' => 'pedia_to_pedia',
+				'connected_items' => $this->base,
+				'nopaging' => true, 'suppress_filters' => false,
+				'post_type' => 'any'
+			));
+			if($object){
+				$posts = array_map(function($post){
+					return new \Benedict\Pedia($post);
+				}, $posts);
+			}
+			return $posts ;
+		}
+
+		public function modules(){
+			return $this->connected();
+		}
+
 		static function build(){
 			parent::build();
 			add_action('p2p_init', function(){
@@ -69,10 +88,10 @@
 						'to' => 'Involved modules'
 					),
 					'admin_box' => array(
-						'show' => 'to',
+						'show' => 'from',
 						'context' => 'side'
 					),
-					'from_labels' => array(
+					'to_labels' => array(
 						'singular_name' => 'Item',
 						'search_items' => 'Buscar',
 						'not_found' => 'Nada encontrado',
