@@ -73,10 +73,10 @@
 						'context' => 'side'
 					),
 					'from_labels' => array(
-						'singular_name' => 'Módulo',
-						'search_items' => 'Buscar Módulo',
+						'singular_name' => 'Item',
+						'search_items' => 'Buscar',
 						'not_found' => 'Nada encontrado',
-						'create' => 'Incluir Módulo'
+						'create' => 'Incluir'
 					)
 				));
 			});
@@ -85,10 +85,9 @@
 
 				if('pedia_to_pedia' == $ctype->name){
 					$format = get_post_meta( $post->ID, '_revision_post_format', true );
-					debug($args);
-					debug($format);
 					if('project' == $format){
-
+						$args['meta_key'] = '_revision_post_format';
+						$args['meta_value'] = 'module' ;
 					}
 				}
 				return $args; 
