@@ -37,8 +37,8 @@
 		) ;
 
 		static $editable_by = array(
-			'Apresentação' => array('fields' => array('featured', 'image_header'), 'placing' => 'side'),
-			'Visualização' => array('fields' => array('claim', 'icon'), 'placing' => 'normal')
+			'Listas' => array('fields' => array('featured', 'show_image'), 'placing' => 'side'),
+			'Visualização' => array('fields' => array('claim', 'image_header'), 'placing' => 'normal')
 		);
 
 		static function build(){
