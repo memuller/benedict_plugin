@@ -1,15 +1,15 @@
-<?php 
+<?php
 	/*
-	Plugin Name: CitySpots
+	Plugin Name: Benedict
 	Version: 0.0.1
-	Plugin URI: http://ederprado.com
-	Description: Gerencia cursos do todoEAD.
-	Author: Matheus Muller, David Sans
-	Author URI: http://ederprado.com
+	Plugin URI: http://benedict.com.br
+	Description: Crafter's Board marvelous toolkit.
+	Author: Matheus Muller
+	Author URI: http://memuller.com
 	*/
 
 	/*
-	Copyright (c) 2012, Matheus Muller, David Sans
+	Copyright (c) 2012, Matheus Muller
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -42,7 +42,7 @@
 	if(!class_exists('Translation')) require_once 'lib/Translation.php' ;
 	# Requires WP table/list framework.
 	if(!class_exists('WP_List_Table')) require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
-	
+
 	require 'base/Base.php' ;
 	Benedict\Plugin::build();
 
