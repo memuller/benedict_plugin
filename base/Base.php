@@ -5,7 +5,7 @@
 	class Plugin extends BasePlugin {
 
 		static $db_version = '0.6a' ;
-		static $custom_posts = array('Post','Pedia', 'Folio');
+		static $custom_posts = array('Post','Pedia', 'Folio', 'Dossier', 'Evidence');
 		static $custom_post_formats = array('Person', 'Project', 'Reference', 'Module', 'Tool', 'Term');
 		static $custom_users = array('Crafter');
 		static $presenters = array('Pedia');
@@ -18,10 +18,11 @@
 		);
 
 		static $query_vars = array(
-			'filter' => '(term|tool|module|project|reference|person)'
+			'filter' => '(term|tool|module|project|reference|person)',
+			'token' => '*',
 		);
 		static $rewrite_rules = array(
-			'pedia/%filter%' => 'post_type=pedia'
+			'pedia/%filter%' => 'post_type=pedia',
 		);
 
 		static function migrate_sharedaddy_options(){
