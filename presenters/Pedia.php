@@ -7,7 +7,29 @@
 		static $actions = array(
 		);
 
+		static function private_projects($fields=array()){
+			global $wpdb, $wp_query;
+			if( is_singular() && $wp_query->query['post_type'] == 'pedia' ) {
+				$fields = str_replace(
+				"$wpdb->posts.*",
+				"$wpdb->posts.ID, $wpdb->posts.post_author, $wpdb->posts.post_date," .
+				" $wpdb->posts.post_date_gmt, $wpdb->posts.post_content," .
+				" $wpdb->posts.post_title, $wpdb->posts.post_excerpt," .
+				" REPLACE( $wpdb->posts.post_status, 'private', 'publish' ) AS `post_status`," .
+				" $wpdb->posts.comment_status, $wpdb->posts.ping_status, $wpdb->posts.post_password," .
+				" $wpdb->posts.post_name, $wpdb->posts.to_ping, $wpdb->posts.pinged," .
+				" $wpdb->posts.post_modified, $wpdb->posts.post_modified_gmt," .
+				" $wpdb->posts.post_content_filtered, $wpdb->posts.post_parent," .
+				" $wpdb->posts.guid, $wpdb->posts.menu_order, $wpdb->posts.post_type," .
+				" $wpdb->posts.post_mime_type, $wpdb->posts.comment_count",
+				$fields
+				);
+			}
+    		return $fields;
+		}
+
 		static function build(){
+			add_filter('posts_fields_request', array('\Benedict\Presenters\Pedia', 'private_projects'));
 			parent::build();
 			static::filter();
 			add_filter('the_content', function($content){
