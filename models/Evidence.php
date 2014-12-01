@@ -62,6 +62,20 @@
 			return static::$fields['status']['values'][$this->status];
 		}
 
+		static function build(){
+			$class = get_called_class();
+			parent::build();
+			add_action('benedict-evidence-save', function($post_id, $object){
+				$evidence = new \Benedict\Evidence($post_id);
+				$dossier = $evidence->parent();
+				$evidences = $dossier->evidences;
+				if(!in_array($post_id, $evidences)){
+					$evidences[]=$post_id;
+					update_post_meta($dossier->ID, 'evidences', $evidences);
+				}
+			},10, 2);
+		}
+
 	}
 
  ?>
